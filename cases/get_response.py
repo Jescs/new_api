@@ -8,7 +8,7 @@ import time
 
 readexcel = ReadExcel(0)
 max_row = readexcel.get_max_row()
-host = 'http://auto-api.mobimedical.cn'
+
 excel = ReadBaseData()
 
 data = excel.get_all_datas()
@@ -22,7 +22,7 @@ for i in range(5):
     is_need = params[4]
     cell = params[5]
     print(cell)
-    header = {'number': 'P2320190329'}
+
     if is_need == 1:
         if method == 'get':
             r = requests.get(url, params=data, headers=header)
