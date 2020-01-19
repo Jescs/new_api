@@ -35,20 +35,7 @@ data = """{
     ]
 }"""
 
-print(get_json_value_by_key(eval(data),'date'))
-
-
-def write_excel_xls( cell, value):
-    """
-    写入excel
-    :param cell: 写入的单元格
-    :param value: 写入的值
-    :return:
-    """
-    workbook_ = load_workbook(file_name)
-    sheetnames = workbook_.sheetnames  # 获得表单名字
-    sheet = workbook_[sheetnames[1]]
-    sheet[cell] = value
-    workbook_.save(file_name)
-
-write_excel_xls('D2','111')
+key = ['date','period']
+for i in range(2):
+    da = get_json_value_by_key(eval(data),key[i], results=[])
+print(da)

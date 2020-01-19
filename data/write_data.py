@@ -3,6 +3,7 @@ from openpyxl import load_workbook
 from data.datapath import file_name
 
 
+
 class WriteExcel():
     def __init__(self):
         self.data = xlrd.open_workbook(file_name, encoding_override=None)
@@ -53,15 +54,13 @@ class WriteExcel():
 
     def get_col(self):
         cells = []
-        counts = []
-        for i in range(1, self.max_col + 1):
-            cell = self.sheet.cell_value(i, 0)
+        cdict = {}
+        for i in range(1, self.max_col):
+            cell = self.sheet.cell_value(i, 4)
             cells.append(cell)
-        for j in cells:
-            count = cells.count(j)
-            if count > 1:
-                counts.append(j)
-        return counts
+        for cname in cells:
+            cdict[cname] = cdict.get(cname, 0) + 1
+        return cdict
 
     def get_key(self, rows):
         """
@@ -70,23 +69,47 @@ class WriteExcel():
         :param rows: json存在的行号
         :return:
         """
-        cell = self.sheet.cell_value(rows - 1, 0)
-        key = self.get_connect_key(rows)
+        keycell = self.sheet.cell_value(rows - 1, 4)
+        cells = self.get_col()
         json_data = self.sheet.cell_value(rows - 1, 3)
-        if isinstance(json_data, str):
-            da = self.get_json_value_by_key(eval(json_data), key)
-            if len(da) > 0:
-                if isinstance(da[0], list):
-                    self.write_excel_xls(cell, da[0][0])
-                else:
-                    self.write_excel_xls(cell, da[0])
-                return da
+        print(cells)
+        if json_data != '':
+            if cells[keycell] > 1:
+                for i in range(cells[keycell]):
+                    row = rows + i
+                    print(row)
+                    cell = self.sheet.cell_value(row - 1, 0)
+                    key = self.get_connect_key(row)
+                    print(cell,key)
+                    if isinstance(json_data, str):
+                        da = self.get_json_value_by_key(eval(json_data), key, results=[])
+                        if len(da) > 0:
+                            if isinstance(da[0], list):
+                                self.write_excel_xls(cell, da[0][0])
+                            else:
+                                self.write_excel_xls(cell, da[0])
+                        else:
+                            print('未查到到{}值'.format(key))
+                            raise ValueError
             else:
-                print('未查到到{}值'.format(key))
-                raise ValueError
+                cell = self.sheet.cell_value(rows - 1, 0)
+                key = self.get_connect_key(rows)
+                json_data = self.sheet.cell_value(rows - 1, 3)
+                if isinstance(json_data, str):
+                    da = self.get_json_value_by_key(eval(json_data), key, results=[])
+                    if len(da) > 0:
+                        if isinstance(da[0], list):
+                            self.write_excel_xls(cell, da[0][0])
+                        else:
+                            self.write_excel_xls(cell, da[0])
+                        return da
+                    else:
+                        print('未查到到{}值'.format(key))
+                        raise ValueError
+        else:
+            pass
 
 
 if __name__ == '__main__':
     excel = WriteExcel()
-    key = excel.get_key(3)
-    print(key)
+    key = excel.get_key(4)
