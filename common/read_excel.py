@@ -80,6 +80,6 @@ class ReadExcel:
 
 if __name__ == '__main__':
     excel = ReadExcel(0)
-    print(excel.get_xlrd(4,13))
+    print(excel.get_xlrd(4,4))
     # print(excel.get_debug_values(6, 4))
     # print(excel.change_cell_type(6, 4))

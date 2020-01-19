@@ -3,10 +3,11 @@ from openpyxl import load_workbook
 from data.datapath import file_name
 
 
-class WriteExcel:
+class WriteExcel():
     def __init__(self):
         self.data = xlrd.open_workbook(file_name, encoding_override=None)
         self.sheet = self.data.sheet_by_index(1)
+        self.max_col = self.sheet.ncols
 
     @classmethod
     def write_excel_xls(cls, cell, value):
@@ -50,25 +51,34 @@ class WriteExcel:
                 self.get_json_value_by_key(data, target_key, results=results)  # 回归列表的当前的元素
         return results
 
-    def get_key(self,rows):
+    def get_col(self):
+        cells = []
+        counts = []
+        for i in range(1, self.max_col + 1):
+            cell = self.sheet.cell_value(i, 0)
+            cells.append(cell)
+        for j in cells:
+            count = cells.count(j)
+            if count > 1:
+                counts.append(j)
+        return counts
+
+    def get_key(self, rows):
         """
         获取接口返回值并写入excel
         :param cell: 写入的单元格地址，如C5
         :param rows: json存在的行号
         :return:
         """
-        cell = self.sheet.cell_value(rows-1,0)
+        cell = self.sheet.cell_value(rows - 1, 0)
         key = self.get_connect_key(rows)
-        json_data = self.sheet.cell_value(rows-1, 3)
+        json_data = self.sheet.cell_value(rows - 1, 3)
         if isinstance(json_data, str):
             da = self.get_json_value_by_key(eval(json_data), key)
-            print(da)
             if len(da) > 0:
                 if isinstance(da[0], list):
-                    print(cell,da[0][0])
                     self.write_excel_xls(cell, da[0][0])
                 else:
-                    print(cell, da[0])
                     self.write_excel_xls(cell, da[0])
                 return da
             else:
@@ -79,6 +89,4 @@ class WriteExcel:
 if __name__ == '__main__':
     excel = WriteExcel()
     key = excel.get_key(3)
-    # excel.write_excel_xls('C2',2)
-    # excel.write_excel_xls(3, key)
     print(key)
