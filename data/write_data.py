@@ -72,15 +72,12 @@ class WriteExcel():
         keycell = self.sheet.cell_value(rows - 1, 4)
         cells = self.get_col()
         json_data = self.sheet.cell_value(rows - 1, 3)
-        print(cells)
         if json_data != '':
             if cells[keycell] > 1:
                 for i in range(cells[keycell]):
                     row = rows + i
-                    print(row)
                     cell = self.sheet.cell_value(row - 1, 0)
                     key = self.get_connect_key(row)
-                    print(cell,key)
                     if isinstance(json_data, str):
                         da = self.get_json_value_by_key(eval(json_data), key, results=[])
                         if len(da) > 0:
