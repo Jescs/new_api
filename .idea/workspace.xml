@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ddb91b6a-d3e5-4859-baf9-891509a86600" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/new_api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/new_api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitigonre" beforeDir="false" afterPath="$PROJECT_DIR$/.gitigonre" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cases/get_response.py" beforeDir="false" afterPath="$PROJECT_DIR$/cases/get_response.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/write_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/write_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,9 +57,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/debug.py">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitigonre">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -79,30 +94,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
               <caret line="1" column="11" selection-start-line="1" selection-start-column="11" selection-end-line="1" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cases/test_cases.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/read_excel.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1702">
-              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -167,12 +158,14 @@
         <option value="$PROJECT_DIR$/data/write_data.py" />
         <option value="$PROJECT_DIR$/cases/get_response.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/debug.py" />
+        <option value="$PROJECT_DIR$/.gitigonre" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="255" />
-    <option name="y" value="193" />
+    <option name="x" value="241" />
+    <option name="y" value="175" />
     <option name="width" value="1691" />
     <option name="height" value="885" />
   </component>
@@ -204,11 +197,6 @@
               <item name="new_api" type="b2602c69:ProjectViewProjectNode" />
               <item name="new_api" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="new_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="new_api" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -385,7 +373,7 @@
       <workItem from="1579310682153" duration="13939000" />
       <workItem from="1579395667268" duration="6762000" />
       <workItem from="1579405183581" duration="9206000" />
-      <workItem from="1580778820552" duration="2265000" />
+      <workItem from="1580778820552" duration="3082000" />
     </task>
     <task id="LOCAL-00001" summary="ts">
       <created>1579418771737</created>
@@ -401,14 +389,28 @@
       <option name="project" value="LOCAL" />
       <updated>1579418873943</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="ts">
+      <created>1580798433316</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1580798433316</updated>
+    </task>
+    <task id="LOCAL-00004" summary="ts">
+      <created>1580798971844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1580798971844</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92711000" />
+    <option name="totallyTimeSpent" value="93528000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="570" y="469" width="1691" height="885" extended-state="0" />
+    <frame x="241" y="175" width="1691" height="885" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11771919" />
@@ -558,8 +560,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore/新建文本文档.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" lean-forward="true" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/debug.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitigonre">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
