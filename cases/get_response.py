@@ -8,7 +8,6 @@ import time
 
 readexcel = ReadExcel(0)
 max_row = readexcel.get_max_row()
-
 excel = ReadBaseData()
 
 data = excel.get_all_datas()

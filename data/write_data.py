@@ -3,7 +3,6 @@ from openpyxl import load_workbook
 from data.datapath import file_name
 
 
-
 class WriteExcel():
     def __init__(self):
         self.data = xlrd.open_workbook(file_name, encoding_override=None)
